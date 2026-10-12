@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#090d16">
+  <meta name="description" content="Share feedback with Bahir Dar University. Your voice helps improve our university community.">
+  <title>Bahir Dar University | Feedback Desk</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <main class="page-shell">
+    <div class="ambient ambient-one" aria-hidden="true"></div>
+    <div class="ambient ambient-two" aria-hidden="true"></div>
+    <section class="hero-grid" aria-labelledby="hero-title">
+      <div class="intro-column">
+        <!-- <div class="eyebrow"><span></span> QUALITY · FEEDBACK · IMPROVEMENT</div> -->
+        <h1 id="hero-title">Help us shape a <span>better <b>university.</b></span></h1>
+        <p class="intro-copy">Students, faculty, staff, and visitors, share your compliments, ideas, or concerns directly with university leadership. Every voice is reviewed with care.</p>
+
+        <ul class="benefit-list">
+          <li><span class="benefit-icon" aria-hidden="true">♧</span><span>Direct to administration team — no intermediary</span></li>
+          <li><span class="benefit-icon" aria-hidden="true">♙</span><span>Encrypted in transit — no account required</span></li>
+          <li><span class="benefit-icon" aria-hidden="true">◷</span><span>Quick submission in under 60 seconds</span></li>
+        </ul>
+<!-- 
+        <article class="qr-card">
+          <div class="qr-card-top"><span class="status-dot"></span><strong>Scalable QR</strong><span class="mobile-pill">MOBILE FRIENDLY</span></div>
+          <div class="qr-content">
+            <div class="qr-frame">
+              Add your separately generated QR image at assets/official-feedback-qr.png. No QR generator is bundled.
+              <img src="assets/official-feedback-qr.png" alt="Official Bahir Dar University feedback QR code" onerror="this.style.display='none'; this.nextElementSibling.hidden=false">
+              <div class="qr-placeholder" hidden aria-label="QR image placeholder">
+                <span class="qr-corner tl"></span><span class="qr-corner tr"></span><span class="qr-corner bl"></span>
+                <span class="qr-pixels">▦ ▪ ▦<br>▪ ▦ ▪<br>▦ ▪ ▦</span>
+                <small>ADD YOUR QR</small>
+              </div>
+            </div>
+            <div class="qr-description">
+              <h2>Official Desk &amp; Campus QR</h2>
+              <p>Be part of the change! Use the QR code to share your feedback, complaints, or suggestions directly with the university administration.</p>
+              <a href="assets/official-feedback-qr.png" target="_blank" rel="noopener" class="qr-link">↗ &nbsp;Preview &amp; Print Stand <span>→</span></a>
+            </div>
+          </div>
+        </article> -->
+      </div>
+
+      <section class="form-card" aria-labelledby="form-title">
+        <div class="form-heading">
+          <div>
+            <h2 id="form-title">Send Your Feedback</h2>
+            <p>Share your voice with Bahir Dar University administration.</p>
+          <!-- </div>
+          <span class="form-mark" aria-hidden="true">×</span>
+        </div> -->
+
+        <form id="feedback-form" novalidate>
+          <fieldset class="category-field">
+            <legend>Feedback Category <span>*</span></legend>
+            <div class="category-options" role="group" aria-label="Feedback category">
+              <button type="button" class="category-chip active" data-category="General" aria-pressed="true">General</button>
+              <button type="button" class="category-chip" data-category="Academics" aria-pressed="false">Academics</button>
+              <button type="button" class="category-chip" data-category="Campus Life" aria-pressed="false">Campus Life</button>
+              <button type="button" class="category-chip" data-category="Suggestion" aria-pressed="false">Suggestion</button>
+              <button type="button" class="category-chip" data-category="Praise" aria-pressed="false">Praise</button>
+              <button type="button" class="category-chip" data-category="Report Issue" aria-pressed="false">Report Issue</button>
+            </div>
+            <input type="hidden" id="category" name="category" value="General">
+          </fieldset>
+
+          <fieldset class="rating-field">
+            <legend>Experience Rating <span class="optional">(optional)</span></legend>
+            <div class="rating-row">
+              <div class="stars" role="group" aria-label="Rate your experience from one to five">
+                <button type="button" class="star" data-rating="1" aria-label="1 star">★</button>
+                <button type="button" class="star" data-rating="2" aria-label="2 stars">★</button>
+                <button type="button" class="star" data-rating="3" aria-label="3 stars">★</button>
+                <button type="button" class="star" data-rating="4" aria-label="4 stars">★</button>
+                <button type="button" class="star" data-rating="5" aria-label="5 stars">★</button>
+              </div>
+              <span id="rating-label">Select rating</span>
+              <input type="hidden" id="rating" name="rating" value="">
+            </div>
+          </fieldset>
+
+          <label class="field-label" for="name">Your Name <span>*</span></label>
+          <input class="text-input" id="name" name="name" type="text" autocomplete="name" maxlength="120" placeholder="Enter your full name" required>
+
+          <label class="field-label" for="email">Email Address <span class="optional">(optional — for a direct response)</span></label>
+          <input class="text-input" id="email" name="email" type="email" autocomplete="email" maxlength="160" placeholder="e.g. you@example.edu, or optional email">
+
+          <div class="message-label-row">
+            <label class="field-label" for="message">Your Message <span>*</span></label>
+            <span class="optional">Be clear and constructive</span>
+          </div>
+          <textarea class="text-input message-input" id="message" name="message" maxlength="1000" placeholder="Describe what you think, what went well, or suggestions for improvement..." required></textarea>
+          <div class="message-meta"><span id="form-error" role="alert" aria-live="polite"></span><span id="char-count">0/1000</span></div>
+
+          <button class="submit-button" id="submit-button" type="submit"><span aria-hidden="true">➤</span><span id="submit-label">Send Feedback</span></button>
+          <p class="privacy-note"><span aria-hidden="true">♙</span> Encrypted and secure. Your privacy is always protected.</p>
+          <div class="form-status" id="form-status" role="status" aria-live="polite" hidden></div>
+        </form>
+      </section>
+    </section>
+
+    <section class="trust-strip" aria-label="Our commitments">
+      <article class="trust-item"><span class="trust-icon">✓</span><div><h3>Secure &amp; Private</h3><p>No account required</p></div></article>
+      <article class="trust-item"><span class="trust-icon">ϟ</span><div><h3>Fast Submission</h3><p>Under 60 seconds</p></div></article>
+      <article class="trust-item"><span class="trust-icon">♧</span><div><h3>Direct to Admin</h3><p>No intermediary</p></div></article>
+      <article class="trust-item"><span class="trust-icon">♡</span><div><h3>Your Voice Matters</h3><p>Better tomorrow</p></div></article>
+    </section>
+
+    <footer class="site-footer">
+      <div class="footer-brand"><span class="seal">BDU</span><span><strong>Bahir Dar University</strong><i> · Feedback Desk</i></span></div>
+      <span>© <span id="year"></span></span>
+    </footer>
+  </main>
+</body>
+</html>
