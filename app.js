@@ -26,13 +26,15 @@ app.use(express.urlencoded({ extended: false, limit: "20kb" }));
 // Configure browser access.
 // If FRONTEND_ORIGIN is set, allow that origin.
 // Otherwise, allow cross-origin requests.
-app.use(
-  cors({
-    origin: process.env.FRONTEND_ORIGIN || true,
-    methods: ["GET", "POST", "OPTIONS"],
-    allowedHeaders: ["Content-Type"]
-  })
-);
+// app.use(
+//   cors({
+//     origin: process.env.FRONTEND_ORIGIN || true,
+//     methods: ["GET", "POST", "OPTIONS"],
+//     allowedHeaders: ["Content-Type"]
+//   })
+// );
+
+app.use(cors());
 
 // Serve the existing frontend from ../frontend.
 const frontendPath = path.join(__dirname, "public");
