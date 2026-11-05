@@ -34,8 +34,8 @@ button { -webkit-tap-highlight-color: transparent; }
 }
 
 .brand-logo-frame {
-  width: 48px;
-  height: 48px;
+  width: 68px;
+  height: 68px;
   border-radius: 14px;
   background: #ffffff;
   border: 2px solid rgba(56, 189, 248, 0.4);
@@ -177,5 +177,10 @@ legend > span, .field-label > span:not(.optional) { color: var(--gold); }
 }
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; } }
 
+
+.logo-seal img{
+  width: 55px;
+  /* height: 25px; */
+}
 
 
